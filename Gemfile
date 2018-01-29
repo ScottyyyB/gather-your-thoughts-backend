@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.4'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -8,13 +9,14 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
-gem 'rack-cors'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
-  gem 'factorybot-rails'
+  gem 'factory_bot_rails'
+  gem 'coveralls', require: false
 end
 
 group :development do
