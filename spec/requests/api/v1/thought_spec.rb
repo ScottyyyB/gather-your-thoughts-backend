@@ -7,7 +7,7 @@ RSpec.describe Api::V1::ThoughtsController, type: :request do
     it 'creates a thought' do
       post '/api/v1/thoughts', params: {
         thought: {
-          title: "Hello", body: "World"
+          title: "Hello", body: "World", label_list: "Family"
         }
       }, headers: headers
 
@@ -18,7 +18,7 @@ RSpec.describe Api::V1::ThoughtsController, type: :request do
     it 'creates a thought without title' do
       post '/api/v1/thoughts', params: {
         thought: {
-          body: "World"
+          body: "World", label_list: "Family"
         }
       }, headers: headers
 
@@ -29,7 +29,7 @@ RSpec.describe Api::V1::ThoughtsController, type: :request do
     it 'creates a thought without body' do
       post '/api/v1/thoughts', params: {
         thought: {
-          title: "Hello"
+          title: "Hello", label_list: "Family"
         }
       }, headers: headers
 
