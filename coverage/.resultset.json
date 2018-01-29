@@ -1,0 +1,46 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/aljoh/Projects/Craft Academy/gather-your-thoughts-backend/app/controllers/api/v0/ping_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/aljoh/Projects/Craft Academy/gather-your-thoughts-backend/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/home/aljoh/Projects/Craft Academy/gather-your-thoughts-backend/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/aljoh/Projects/Craft Academy/gather-your-thoughts-backend/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/aljoh/Projects/Craft Academy/gather-your-thoughts-backend/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/aljoh/Projects/Craft Academy/gather-your-thoughts-backend/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/aljoh/Projects/Craft Academy/gather-your-thoughts-backend/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1517222857
+  }
+}
