@@ -12,6 +12,10 @@ RSpec.describe Thought, type: :model do
     it { is_expected.to validate_presence_of :body }
   end
 
+  describe 'Relations' do
+    it { is_expected.to have_many :labels }
+  end
+
   describe FactoryBot do
     it 'should be valid' do
       expect(FactoryBot.create(:thought)).to be_valid
