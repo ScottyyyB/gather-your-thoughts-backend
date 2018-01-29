@@ -12,5 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/node_modules
+coverage
+.idea
 
 .byebug_history
