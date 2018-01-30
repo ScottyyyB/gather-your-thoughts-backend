@@ -15,6 +15,7 @@ RSpec.describe Thought, type: :model do
   describe 'Relations' do
     it { is_expected.to have_many :labels }
     it { is_expected.to have_many :sentiments }
+    it { is_expected.to belong_to :user}
   end
 
   describe FactoryBot do
