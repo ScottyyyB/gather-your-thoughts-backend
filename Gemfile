@@ -8,10 +8,11 @@ end
 
 gem 'devise_token_auth'
 gem 'acts-as-taggable-on'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rack-cors', require: 'rack/cors'
+gem 'devise_token_auth'
 
 group :development, :test do
   gem 'pry-byebug'
