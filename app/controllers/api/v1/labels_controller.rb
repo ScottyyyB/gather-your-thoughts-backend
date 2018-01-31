@@ -14,6 +14,6 @@ class Api::V1::LabelsController < ApplicationController
   def show
     label = Thought.label_counts.find_by(id: params[:id])
     thoughts = Thought.tagged_with(label.name)
-    render json: { thoughts: thoughts}
+    render json: thoughts, each_serializer: LabelsSerializer
   end
 end

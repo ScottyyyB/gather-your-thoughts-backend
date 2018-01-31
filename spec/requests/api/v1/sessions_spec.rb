@@ -9,12 +9,12 @@ RSpec.describe 'Sessions', type: :request do
           password: user.password
       }, headers: headers
 
-      expected_response = {
-          'data' => {
-              'id' => user.id, 'uid' => user.email, 'email' => user.email,
-              'provider' => 'email', 'name' => nil, 'nickname' => nil,
-              'image' => nil
-          }
+      expected_response = {"data" => {
+          "id" => user.id,
+          "email" => user.email,
+          "provider" => "email", "uid" => user.email,
+          "name" => nil, "nickname" => nil,
+          "image" => nil, "type" => "user"}
       }
 
       expect(response_json).to eq expected_response
