@@ -10,6 +10,7 @@ RSpec.describe Thought, type: :model do
   describe 'Validations' do
     it { is_expected.to validate_presence_of :title }
     it { is_expected.to validate_presence_of :body }
+    it { is_expected.to validate_presence_of :label_list }
   end
 
   describe 'Relations' do

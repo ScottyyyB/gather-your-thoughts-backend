@@ -3,5 +3,6 @@ FactoryBot.define do
     user
     title "MyString"
     body "MyText"
+    label_list "Family"
   end
 end
