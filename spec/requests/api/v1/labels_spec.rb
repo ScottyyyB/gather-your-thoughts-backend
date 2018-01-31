@@ -9,10 +9,16 @@ RSpec.describe Api::V1::LabelsController, type: :request do
   describe 'GET /v1/labels' do
     it 'returns all labels for a specific user' do
       get '/api/v1/labels', headers: headers
-
       expect(response.status).to eq 200
       expected_response = eval(file_fixture('labels.txt').read)
       expect(response_json).to eq expected_response.as_json
+    end
+  end
+
+  describe 'GET /v1/labels/label_id' do
+    it 'returns all thoughts for a specific label' do
+      get "/api/v1/labels/#{user.thoughts.first.labels.ids}"
+      expect(response.status).to eq 200
     end
   end
 end
