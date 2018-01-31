@@ -4,6 +4,8 @@ class Api::V1::ThoughtsController < ApplicationController
   def create
     thought = Thought.new(thought_params.merge(user: current_api_v1_user))
     thought.label_list.add(params[:label_list])
+    thought.sentiment_list.add(params[:sentiment_list])
+
     if thought.save
       render json: { status: 'success' }
     else
