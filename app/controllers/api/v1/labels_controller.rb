@@ -10,4 +10,10 @@ class Api::V1::LabelsController < ApplicationController
       end
     render json: { labels: label_list }
   end
+
+  def show
+    label = Thought.label_counts.find_by(id: params[:id])
+    thoughts = Thought.tagged_with(label.name)
+    render json: { thoughts: thoughts}
+  end
 end
