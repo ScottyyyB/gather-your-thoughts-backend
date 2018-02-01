@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :thoughts, only: [:create]
       resources :labels, only: [:index, :show]
       resources :sentiments, only: [:index]
+      resources :history, only: [:index]
     end
   end
 end
