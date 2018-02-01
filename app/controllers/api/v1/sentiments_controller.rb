@@ -12,8 +12,8 @@ class Api::V1::SentimentsController < ApplicationController
   end
 
   def show
-    sentiment = Thought.sentiment_counts.find(params[:id])
-    thoughts = Thought.tagged_with(sentiment.name)
+    sentiment = current_api_v1_user.thoughts.sentiment_counts.find(params[:id])
+    thoughts = current_api_v1_user.thoughts.tagged_with(sentiment.name)
     render json: thoughts, each_serializer: ThoughtsSerializer
   end
 end
