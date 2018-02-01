@@ -1,0 +1,1 @@
+{"data"=>{"id"=>"#{Thought.last.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiment-list"=>["Happy"], "label-list"=>["Family"]}}}

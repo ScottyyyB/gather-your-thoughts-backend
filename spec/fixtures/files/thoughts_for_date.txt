@@ -1,4 +1,4 @@
 {"data"=>
-  [{"id"=>"#{Thought.first.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText"}},
-   {"id"=>"#{Thought.second.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText"}},
-   {"id"=>"#{Thought.third.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText"}}]}
+  [{"id"=>"#{Thought.first.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiment-list"=>["Happy"], "label-list"=>["Family"]}},
+   {"id"=>"#{Thought.second.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiment-list"=>["Happy"], "label-list"=>["Family"]}},
+   {"id"=>"#{Thought.third.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiment-list"=>["Happy"], "label-list"=>["Family"]}}]}
