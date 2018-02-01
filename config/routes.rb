@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
       resources :thoughts, only: [:create]
       resources :labels, only: [:index, :show]
-      resources :sentiments, only: [:index]
+      resources :sentiments, only: [:index, :show]
       resources :history, only: [:index]
     end
   end

@@ -8,6 +8,6 @@ class Api::V1::HistoryController < ApplicationController
         thoughts << thought
       end
     end
-    render json: thoughts, each_serializer: LabelsSerializer
+    render json: thoughts, each_serializer: ThoughtsSerializer
   end
 end
