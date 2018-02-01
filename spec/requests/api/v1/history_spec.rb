@@ -11,7 +11,7 @@ RSpec.describe Api::V1::HistoryController, type: :request do
 
   describe 'get /v1/history' do
     it 'gets thoughts sorted by date' do
-      get '/api/v1/history?date=2018-01-31', headers: headers
+      get "/api/v1/history?date=#{Time.now}", headers: headers
       expect(response.status).to eq 200
       expected_response = eval(file_fixture('thoughts_for_date.txt').read)
       expect(response_json).to eq expected_response.as_json
