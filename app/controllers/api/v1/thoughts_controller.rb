@@ -14,6 +14,11 @@ class Api::V1::ThoughtsController < ApplicationController
     end
   end
 
+  def show
+    thought = Thought.find(params[:id])
+    render json: thought, serializer: ThoughtsSerializer
+  end
+
   private
 
   def thought_params
