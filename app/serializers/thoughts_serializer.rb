@@ -1,3 +1,11 @@
 class ThoughtsSerializer < ActiveModel::Serializer
-  attributes :title, :body, :sentiment_list, :label_list
+  attributes :title, :body, :sentiments, :labels
+
+  def sentiments
+    object.sentiment_list
+  end
+
+  def labels
+    object.label_list
+  end
 end
