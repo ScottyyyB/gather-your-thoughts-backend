@@ -4,5 +4,6 @@ FactoryBot.define do
     title "MyString"
     body "MyText"
     label_list "Family"
+    sentiment_list "Happy"
   end
 end
