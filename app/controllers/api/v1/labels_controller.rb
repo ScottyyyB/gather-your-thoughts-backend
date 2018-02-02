@@ -5,6 +5,7 @@ class Api::V1::LabelsController < ApplicationController
     label_list = []
     current_api_v1_user.thoughts.each do |thought|
       if label_list.none? { |label| label.name == thought.labels[0].name }
+        thought.labels[0].taggings_count = current_api_v1_user.thoughts.tagged_with(thought.labels[0].name).count
         label_list << thought.labels[0]
       end
     end
