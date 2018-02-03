@@ -19,6 +19,11 @@ class Api::V1::ThoughtsController < ApplicationController
     render json: thought, serializer: ThoughtsSerializer
   end
 
+  def destroy
+    thought = Thought.find(params[:id]).delete
+    render json: { message: "#{thought.title} has been successfully deleted." }
+  end
+
   private
 
   def thought_params

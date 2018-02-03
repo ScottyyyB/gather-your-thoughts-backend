@@ -58,16 +58,26 @@ RSpec.describe Api::V1::ThoughtsController, type: :request do
     end
   end
 
-  describe 'GET /v1/thoughts/thought_id' do
+  context 'Specific thoughts' do
     before do
       FactoryBot.create(:thought, user: user)
     end
+    describe 'GET /v1/thoughts/thought_id' do
+      it 'returns a specific thought' do
+        get "/api/v1/thoughts/#{Thought.last.id}", headers: headers
+        expect(response.status).to eq 200
+        expected_response = eval(file_fixture('thoughts_show.txt').read)
+        expect(response_json).to eq expected_response.as_json
+      end
+    end
 
-    it 'returns a specific thought' do
-      get "/api/v1/thoughts/#{Thought.last.id}", headers: headers
-      expect(response.status).to eq 200
-      expected_response = eval(file_fixture('thoughts_show.txt').read)
-      expect(response_json).to eq expected_response.as_json
+    describe 'DELETE /v1/thoughts/thought_id' do
+      it 'deletes a specific thought' do
+        delete "/api/v1/thoughts/#{Thought.last.id}", headers: headers
+        expect(response.status).to eq 200
+        expected_response = eval(file_fixture('thought_delete.txt').read)
+        expect(response_json).to eq expected_response.as_json
+      end
     end
   end
 end
