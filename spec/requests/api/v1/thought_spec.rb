@@ -5,6 +5,9 @@ RSpec.describe Api::V1::ThoughtsController, type: :request do
   let(:credentials) { user.create_new_auth_token }
   let(:headers) { { HTTP_ACCEPT: 'application/json'}.merge!(credentials) }
   let(:headers_sad) { { HTTP_ACCEPT: 'application/json' } }
+  before do
+    5.times { FactoryBot.create(:thought, user: user) }
+  end
 
   describe 'POST /v1/thoughts' do
     it 'creates a thought' do
@@ -58,26 +61,39 @@ RSpec.describe Api::V1::ThoughtsController, type: :request do
     end
   end
 
-  context 'Specific thoughts' do
-    before do
-      FactoryBot.create(:thought, user: user)
+  describe 'GET /v1/thoughts/thought_id' do
+    it 'returns a specific thought' do
+      get "/api/v1/thoughts/#{Thought.last.id}", headers: headers
+      expect(response.status).to eq 200
+      expected_response = eval(file_fixture('thoughts_show.txt').read)
+      expect(response_json).to eq expected_response.as_json
     end
-    describe 'GET /v1/thoughts/thought_id' do
-      it 'returns a specific thought' do
-        get "/api/v1/thoughts/#{Thought.last.id}", headers: headers
-        expect(response.status).to eq 200
-        expected_response = eval(file_fixture('thoughts_show.txt').read)
-        expect(response_json).to eq expected_response.as_json
-      end
-    end
+  end
 
-    describe 'DELETE /v1/thoughts/thought_id' do
-      it 'deletes a specific thought' do
-        delete "/api/v1/thoughts/#{Thought.last.id}", headers: headers
-        expect(response.status).to eq 200
-        expected_response = eval(file_fixture('thought_delete.txt').read)
-        expect(response_json).to eq expected_response.as_json
-      end
+  describe 'DELETE /v1/thoughts/thought_id' do
+    it 'deletes a specific thought' do
+      delete "/api/v1/thoughts/#{Thought.last.id}", headers: headers
+      expect(response.status).to eq 200
+      expected_response = eval(file_fixture('thought_delete.txt').read)
+      expect(response_json).to eq expected_response.as_json
+    end
+  end
+
+  describe 'GET /v1/thoughts/thought_id' do
+    it 'returns a specific thought' do
+      get "/api/v1/thoughts/#{Thought.last.id}", headers: headers
+      expect(response.status).to eq 200
+      expected_response = eval(file_fixture('thoughts_show.txt').read)
+      expect(response_json).to eq expected_response.as_json
+    end
+  end
+
+  describe 'GET /v1/thoughts' do
+    it 'returns a the 3 latest thoughts' do
+      get '/api/v1/thoughts', headers: headers
+      expect(response.status).to eq 200
+      expected_response = eval(file_fixture('thoughts_index.txt').read)
+      expect(response_json).to eq expected_response.as_json
     end
   end
 end
