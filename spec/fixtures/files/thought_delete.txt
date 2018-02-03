@@ -1,0 +1,1 @@
+{"message"=>"MyString has been successfully deleted."}
