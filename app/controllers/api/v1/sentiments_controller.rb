@@ -3,27 +3,27 @@ class Api::V1::SentimentsController < ApplicationController
 
   def index
     sentiment_list = []
-    current_api_v1_user.thoughts.each do |thought|
-      if sentiment_list.none? { |sentiment| sentiment.name == thought.sentiments[0].name }
-        thought.sentiments[0].taggings_count = current_api_v1_user.thoughts.tagged_with(thought.sentiments[0].name).count
-        sentiment_list << thought.sentiments[0]
+    current_api_v1_user.entries.each do |entry|
+      if sentiment_list.none? { |sentiment| sentiment.name == entry.sentiments[0].name }
+        entry.sentiments[0].taggings_count = current_api_v1_user.entries.tagged_with(entry.sentiments[0].name).count
+        sentiment_list << entry.sentiments[0]
       end
     end
     render json: { sentiments: sentiment_list }
   end
 
   def show
-    sentiment = current_api_v1_user.thoughts.sentiment_counts.find(params[:id])
-    thoughts = current_api_v1_user.thoughts.tagged_with(sentiment.name)
-    render json: thoughts, each_serializer: ThoughtsSerializer
+    sentiment = current_api_v1_user.entries.sentiment_counts.find(params[:id])
+    entries = current_api_v1_user.entries.tagged_with(sentiment.name)
+    render json: entries, each_serializer: EntriesSerializer
   end
 
   def statistics
     sentiment_list = []
-    current_api_v1_user.thoughts.where("created_at >= ?", 1.month.ago).each do |thought|
-      if sentiment_list.none? { |sentiment| sentiment.name == thought.sentiments[0].name }
-        thought.sentiments[0].taggings_count = current_api_v1_user.thoughts.tagged_with(thought.sentiments[0].name).count
-        sentiment_list << thought.sentiments[0]
+    current_api_v1_user.entries.where("created_at >= ?", 1.month.ago).each do |entry|
+      if sentiment_list.none? { |sentiment| sentiment.name == entry.sentiments[0].name }
+        entry.sentiments[0].taggings_count = current_api_v1_user.entries.tagged_with(entry.sentiments[0].name).count
+        sentiment_list << entry.sentiments[0]
       end
     end
     render json: { sentiments: sentiment_list}

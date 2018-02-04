@@ -1,4 +1,0 @@
-{"data"=>
-  [{"id"=>"#{Thought.first.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"]}},
-   {"id"=>"#{Thought.second.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"]}},
-   {"id"=>"#{Thought.third.id}", "type"=>"thoughts", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"]}}]}

@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 20180130123308) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "entries", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -38,15 +47,6 @@ ActiveRecord::Schema.define(version: 20180130123308) do
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
-  end
-
-  create_table "thoughts", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_thoughts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,5 +78,5 @@ ActiveRecord::Schema.define(version: 20180130123308) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "thoughts", "users"
+  add_foreign_key "entries", "users"
 end

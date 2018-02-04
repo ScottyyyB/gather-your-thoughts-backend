@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :thought do
+  factory :entry do
     user
     title "MyString"
     body "MyText"
