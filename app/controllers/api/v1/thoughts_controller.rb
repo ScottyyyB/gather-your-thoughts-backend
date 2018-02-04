@@ -29,6 +29,16 @@ class Api::V1::ThoughtsController < ApplicationController
     render json: thoughts, each_serializer: ThoughtsSerializer
   end
 
+  def update
+    thought = Thought.find(params[:id])
+    if thought.update(thought_params)
+      render json: { message: "#{thought.title} has been successfully updated." }
+    else
+      render json: { error: thought.errors.full_messages },
+             status: 422
+    end
+  end
+
   private
 
   def thought_params

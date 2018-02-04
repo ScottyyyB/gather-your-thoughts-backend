@@ -96,4 +96,31 @@ RSpec.describe Api::V1::ThoughtsController, type: :request do
       expect(response_json).to eq expected_response.as_json
     end
   end
+
+  describe 'GET /v1/thoughts/thought_id' do
+    it 'edits a specific thought' do
+      put "/api/v1/thoughts/#{Thought.last.id}", params: {
+        thought: { title: 'New title', body: 'New body' }
+      }, headers: headers
+      expect(response.status).to eq 200
+      expected_response = eval(file_fixture('edit_thought.txt').read)
+      expect(response_json).to eq expected_response.as_json
+    end
+
+    it 'does not edit if title is blank' do
+      put "/api/v1/thoughts/#{Thought.last.id}", params: {
+        thought: { title: '', body: 'New Body' }
+      }, headers: headers
+      expect(response.status).to eq 422
+      expect(response_json['error']).to eq ["Title can't be blank"]
+    end
+
+    it 'does not edit if body is blank' do
+      put "/api/v1/thoughts/#{Thought.last.id}", params: {
+        thought: { title: 'New title', body: '' }
+      }, headers: headers
+      expect(response.status).to eq 422
+      expect(response_json['error']).to eq ["Body can't be blank"]
+    end
+  end
 end
