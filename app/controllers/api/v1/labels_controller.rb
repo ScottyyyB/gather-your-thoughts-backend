@@ -3,18 +3,18 @@ class Api::V1::LabelsController < ApplicationController
 
   def index
     label_list = []
-    current_api_v1_user.thoughts.each do |thought|
-      if label_list.none? { |label| label.name == thought.labels[0].name }
-        thought.labels[0].taggings_count = current_api_v1_user.thoughts.tagged_with(thought.labels[0].name).count
-        label_list << thought.labels[0]
+    current_api_v1_user.entries.each do |entry|
+      if label_list.none? { |label| label.name == entry.labels[0].name }
+        entry.labels[0].taggings_count = current_api_v1_user.entries.tagged_with(entry.labels[0].name).count
+        label_list << entry.labels[0]
       end
     end
     render json: { labels: label_list }
   end
 
   def show
-    label = current_api_v1_user.thoughts.label_counts.find(params[:id])
-    thoughts = current_api_v1_user.thoughts.tagged_with(label.name)
-    render json: thoughts, each_serializer: ThoughtsSerializer
+    label = current_api_v1_user.entries.label_counts.find(params[:id])
+    entries = current_api_v1_user.entries.tagged_with(label.name)
+    render json: entries, each_serializer: EntriesSerializer
   end
 end

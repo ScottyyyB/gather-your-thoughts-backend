@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Thought, type: :model do
+RSpec.describe Entry, type: :model do
   describe 'DB Table' do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :title }
@@ -22,7 +22,7 @@ RSpec.describe Thought, type: :model do
 
   describe FactoryBot do
     it 'should be valid' do
-      expect(FactoryBot.create(:thought)).to be_valid
+      expect(FactoryBot.create(:entry)).to be_valid
     end
   end
 end

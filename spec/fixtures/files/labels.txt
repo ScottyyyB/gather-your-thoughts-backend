@@ -1,1 +1,1 @@
-{"labels"=>[{"id"=>Thought.last.labels[0].id, "name"=>"Family", "taggings_count"=>3}]}
+{"labels"=>[{"id"=>Entry.last.labels[0].id, "name"=>"Family", "taggings_count"=>3}]}

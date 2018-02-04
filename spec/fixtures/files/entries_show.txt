@@ -1,0 +1,1 @@
+{"data"=>{"id"=>"#{Entry.last.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"]}}}

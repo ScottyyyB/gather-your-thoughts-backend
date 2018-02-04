@@ -1,4 +1,4 @@
-class ThoughtsSerializer < ActiveModel::Serializer
+class EntriesSerializer < ActiveModel::Serializer
   attributes :title, :body, :sentiments, :labels
 
   def sentiments

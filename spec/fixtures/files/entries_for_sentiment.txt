@@ -1,0 +1,4 @@
+{"data"=>
+  [{"id"=>"#{Entry.third.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Gaming"]}},
+   {"id"=>"#{Entry.second.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Gaming"]}},
+   {"id"=>"#{Entry.first.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Gaming"]}}]}

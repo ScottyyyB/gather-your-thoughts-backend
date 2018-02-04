@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Relations' do
-    it { is_expected.to have_many :thoughts }
+    it { is_expected.to have_many :entries }
   end
 
   describe 'Validations' do
