@@ -1,8 +1,0 @@
-{"week"=>
-  [{"amount"=>0, "date"=>"#{Date.today - 6}"},
-   {"amount"=>0, "date"=>"#{Date.today - 5}"},
-   {"amount"=>2, "date"=>"#{Date.today - 4}"},
-   {"amount"=>0, "date"=>"#{Date.today - 3}"},
-   {"amount"=>0, "date"=>"#{Date.today - 2}"},
-   {"amount"=>5, "date"=>"#{Date.today - 1}"},
-   {"amount"=>0, "date"=>"#{Date.today}"}]}
