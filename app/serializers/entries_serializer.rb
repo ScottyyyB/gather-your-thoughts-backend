@@ -1,5 +1,5 @@
 class EntriesSerializer < ActiveModel::Serializer
-  attributes :title, :body, :sentiments, :labels, :created_at
+  attributes :title, :body, :sentiments, :labels, :date
 
   def sentiments
     object.sentiment_list
@@ -9,7 +9,7 @@ class EntriesSerializer < ActiveModel::Serializer
     object.label_list
   end
 
-  def created_at
+  def date
     Date.parse(object.created_at.to_s)
   end
 end
