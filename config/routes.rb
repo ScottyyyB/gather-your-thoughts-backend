@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get '/sentiments/statistics', to: 'sentiments#statistics'
       resources :sentiments, only: [:index, :show]
       resources :history, only: [:index]
+      resources :activity, only: [:index]
     end
   end
 end
