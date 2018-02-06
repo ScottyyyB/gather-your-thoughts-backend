@@ -1,4 +1,4 @@
 {"data"=>
-  [{"id"=>"#{Entry.third_to_last.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"]}},
-   {"id"=>"#{Entry.second_to_last.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"]}},
-   {"id"=>"#{Entry.last.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"]}}]}
+ [{"id"=>"#{Entry.third_to_last.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"], "created-at"=>"#{Date.today}"}},
+  {"id"=>"#{Entry.second_to_last.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"], "created-at"=>"#{Date.today}"}},
+  {"id"=>"#{Entry.last.id}", "type"=>"entries", "attributes"=>{"title"=>"MyString", "body"=>"MyText", "sentiments"=>["Happy"], "labels"=>["Family"], "created-at"=>"#{Date.today}"}}]}
