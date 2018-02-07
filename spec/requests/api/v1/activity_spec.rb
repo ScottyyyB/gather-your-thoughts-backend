@@ -3,6 +3,7 @@ RSpec.describe Api::V1::ActivityController, type: :request do
   let(:credentials) { user.create_new_auth_token }
   let(:headers) { { HTTP_ACCEPT: 'application/json'}.merge!(credentials) }
   before do
+    7.times { FactoryBot.create(:entry, user: user, sentiment_list: 'Sad', created_at: Date.yesterday) }
     5.times { FactoryBot.create(:entry, user: user, created_at: Date.yesterday) }
     2.times { FactoryBot.create(:entry, user: user, created_at: Date.today - 4) }
     2.times { FactoryBot.create(:entry, user: user, created_at: Date.today.months_ago(2)) }

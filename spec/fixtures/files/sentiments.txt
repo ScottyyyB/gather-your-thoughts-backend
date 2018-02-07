@@ -1,1 +1,1 @@
-{"sentiments"=>[{"id"=>Entry.first.sentiments[0].id, "name"=>"Happy", "taggings_count"=>3}]}
+{"sentiments"=>[{"id"=>Entry.first.sentiments[0].id, "name"=>"Happy", "taggings_count"=>3}, {"id"=>Entry.last.sentiments[0].id, "name"=>"Excited", "taggings_count"=>1}]}
