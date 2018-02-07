@@ -1,9 +1,10 @@
 {"week"=>
   [{"amount"=>0, "date"=>"#{Date.today - 6}"},
    {"amount"=>0, "date"=>"#{Date.today - 5}"},
-   {"amount"=>2, "date"=>"#{Date.today - 4}"},
+   {"amount"=>0, "date"=>"#{Date.today - 4}"},
    {"amount"=>0, "date"=>"#{Date.today - 3}"},
    {"amount"=>0, "date"=>"#{Date.today - 2}"},
-   {"amount"=>5, "date"=>"#{Date.today - 1}"},
+   {"amount"=>14, "date"=>"#{Date.today - 1}"},
    {"amount"=>0, "date"=>"#{Date.today}"}],
- "months"=>[{"amount"=>0, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(5).mon].slice(0, 3)}"}, {"amount"=>2, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(4).mon].slice(0, 3)}"}, {"amount"=>0, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(3).mon].slice(0, 3)}"}, {"amount"=>2, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(2).mon].slice(0, 3)}"}, {"amount"=>0, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(1).mon].slice(0, 3)}"}, {"amount"=>7, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(0).mon].slice(0, 3)}"}]}
+ "months"=>[{"amount"=>0, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(5).mon].slice(0, 3)}"}, {"amount"=>2, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(4).mon].slice(0, 3)}"}, {"amount"=>0, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(3).mon].slice(0, 3)}"}, {"amount"=>2, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(2).mon].slice(0, 3)}"}, {"amount"=>0, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(1).mon].slice(0, 3)}"}, {"amount"=>14, "month"=>"#{Date::MONTHNAMES[Date.today.months_ago(0).mon].slice(0, 3)}"}],
+ "sentiment_week"=>[{"id"=>Entry.last.sentiments[0].id, "name"=>"Happy", "taggings_count"=>7}, {"id"=>Entry.first.sentiments[0].id, "name"=>"Sad", "taggings_count"=>7}]}
