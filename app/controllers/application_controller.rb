@@ -43,7 +43,7 @@ class ApplicationController < ActionController::API
     end
     sentiment_list.sort_by!(&:taggings_count).reverse!
     count2 = sentiment_list.length - 1
-    while count2 > -1
+    while count2 > 0
       unless sentiment_list[count2].taggings_count == sentiment_list[0].taggings_count
         sentiment_list.pop
       end
