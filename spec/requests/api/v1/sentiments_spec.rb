@@ -3,7 +3,7 @@ RSpec.describe Api::V1::SentimentsController, type: :request do
   let(:credentials) { user.create_new_auth_token }
   let(:headers) { { HTTP_ACCEPT: 'application/json'}.merge!(credentials) }
   before do
-    3.times { FactoryBot.create(:entry, user: user ) }
+    3.times { FactoryBot.create(:entry, user: user) }
     1.times { FactoryBot.create(:entry, user: user, sentiment_list: "Excited", created_at: Date.today - 40 ) }
   end
 
