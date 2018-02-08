@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :sentiments, only: [:index, :show]
       resources :history, only: [:index]
       resources :activity, only: [:index]
+      resources :analyses, only: [:index]
     end
   end
 end
