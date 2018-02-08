@@ -13,6 +13,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rack-cors', require: 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-byebug'

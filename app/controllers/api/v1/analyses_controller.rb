@@ -1,4 +1,5 @@
 class Api::V1::AnalysesController < ApplicationController
+  before_action :authenticate_api_v1_user!
 
   def index
     require 'net/https'
@@ -12,7 +13,7 @@ class Api::V1::AnalysesController < ApplicationController
 
     request = Net::HTTP::Post.new(uri)
     request['Content-Type'] = "application/json"
-    request['Ocp-Apim-Subscription-Key'] = '6f8774f0346a4ce18eb8e228b1e24332'
+    request['Ocp-Apim-Subscription-Key'] = ENV['TEXT_API']
     request.body = documents.to_json
 
     response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
