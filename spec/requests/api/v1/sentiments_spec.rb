@@ -28,6 +28,7 @@ RSpec.describe Api::V1::SentimentsController, type: :request do
   describe 'GET /v1/sentiments/statistics' do
     it 'should return all sentiments from the last month' do
       get '/api/v1/sentiments/statistics', headers: headers
+      binding.pry
       expect(response.status).to eq 200
       expected_response = eval(file_fixture('sentiments_for_last_month.txt').read)
       expect(response_json).to eq expected_response.as_json
