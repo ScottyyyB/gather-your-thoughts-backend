@@ -19,18 +19,13 @@ class Api::V1::SentimentsController < ApplicationController
   end
 
   def statistics
-    sentiment_list = []
-    count = 0
-    monthly_entries = current_api_v1_user.entries.select { |entry| entry.created_at >= 1.month.ago }
-    monthly_entries.entries.each do |entry|
-      if sentiment_list.none? { |sentiment| sentiment.name == entry.sentiments[0].name }
-        entry.sentiments[0].taggings_count = monthly_entries.count do |entry|
-          entry.sentiments[0].name == current_api_v1_user.entries.sentiment_counts[count].name
-        end
-        sentiment_list << entry.sentiments[0]
-        count += 1
-      end
-    end
-    render json: { sentiments: sentiment_list}
+   sentiment_list = []
+   monthly_entries = current_api_v1_user.entries.select { |entry| entry.created_at >= 1.month.ago }
+   monthly_entries.entries.each do |entry|
+     sentiment_list << entry.sentiment_list
+   end
+   counts = Hash.new(0)
+   sentiment_list.each { |sentiment| counts[sentiment] += 1}
+   render json: { sentiments: counts}
   end
 end
