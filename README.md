@@ -1,7 +1,7 @@
 ## Gather-Your-Thoughts-Backend
 
-Craft Academy OCT 2017 Cohort Final Project
-
+Craft Academy OCT 2017 Cohort Final Project  
+[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/gather-your-thoughts-backend/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/gather-your-thoughts-backend?branch=development)
 ### About
 This is an API only Rails application  
 Rails v.5.0.1  
