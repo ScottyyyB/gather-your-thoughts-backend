@@ -5,7 +5,8 @@ Craft Academy OCT 2017 Cohort Final Project
 ### About
 This is an API only Rails application  
 Rails v.5.0.1  
-Ruby v.2.4.1
+Ruby v.2.4.1  
+Find our frontend repository: https://github.com/CraftAcademy/gather-your-thoughts-frontend
 
 ### Install
 Run `bundle install` to install all gems  
@@ -28,3 +29,8 @@ dotenv-rails
 shoulda-matchers  
 rspec-rails  
 factory_bot_rails  
+
+
+### Contributors
+https://github.com/aljoh  
+https://github.com/scottyyyb
