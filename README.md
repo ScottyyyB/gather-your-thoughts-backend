@@ -1,24 +1,37 @@
-# README
+## Gather-Your-Thoughts-Backend
+[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/gather-your-thoughts-backend/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/gather-your-thoughts-backend?branch=development)  
+  
+Craft Academy OCT 2017 Cohort Final Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### About
+This is an API only Rails application  
+Rails v.5.0.1  
+Ruby v.2.4.1  
+Find our frontend repository: https://github.com/CraftAcademy/gather-your-thoughts-frontend
 
-Things you may want to cover:
+### Install
+Run `bundle install` to install all gems  
+Run `rails db:create db:migrate` to create the database and run all migrations  
 
-* Ruby version
+### Tests
+We have used rspec to test all our database and controllers.  
+To run the the tests, run `rspec`
 
-* System dependencies
+## Gems and Dependencies
 
-* Configuration
+### Main Gems
+devise_token_auth  
+acts-as-taggable-on  
+rails  
+active_model_serializers  
+dotenv-rails
 
-* Database creation
+### For testing
+shoulda-matchers  
+rspec-rails  
+factory_bot_rails  
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Contributors
+https://github.com/aljoh  
+https://github.com/scottyyyb
