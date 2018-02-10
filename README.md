@@ -1,24 +1,30 @@
-# README
+## Gather-Your-Thoughts-Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Craft Academy OCT 2017 Cohort Final Project
 
-Things you may want to cover:
+### About
+This is an API only Rails application  
+Rails v.5.0.1  
+Ruby v.2.4.1
 
-* Ruby version
+### Install
+Run `bundle install` to install all gems  
+Run `rails db:create db:migrate` to create the database and run all migrations  
 
-* System dependencies
+### Tests
+We have used rspec to test all our database and controllers.  
+To run the the tests, run `rspec`
 
-* Configuration
+## Gems and Dependencies
 
-* Database creation
+### Main Gems
+devise_token_auth  
+acts-as-taggable-on  
+rails  
+active_model_serializers  
+dotenv-rails
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### For testing
+shoulda-matchers  
+rspec-rails  
+factory_bot_rails  
