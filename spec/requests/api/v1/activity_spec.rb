@@ -5,6 +5,7 @@ RSpec.describe Api::V1::ActivityController, type: :request do
   before do
     7.times { FactoryBot.create(:entry, user: user, sentiment_list: 'Sad', created_at: Date.yesterday) }
     7.times { FactoryBot.create(:entry, user: user, created_at: Date.yesterday) }
+    1.times { FactoryBot.create(:entry, user: user, sentiment_list: 'Angry', created_at: Date.yesterday) }
     2.times { FactoryBot.create(:entry, user: user, created_at: Date.today.months_ago(2)) }
     2.times { FactoryBot.create(:entry, user: user, created_at: Date.today.months_ago(4)) }
     2.times { FactoryBot.create(:entry, user: user, created_at: Date.today.months_ago(12)) }
