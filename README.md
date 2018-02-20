@@ -7,7 +7,7 @@ Craft Academy OCT 2017 Cohort Final Project
 This is an API only Rails application  
 Rails v.5.0.1  
 Ruby v.2.4.1  
-Find our frontend repository: https://github.com/CraftAcademy/gather-your-thoughts-frontend
+Find our front end repository: https://github.com/CraftAcademy/gather-your-thoughts-frontend
 
 ### Install
 Run `bundle install` to install all gems  
@@ -31,6 +31,9 @@ rack-cors
 shoulda-matchers  
 rspec-rails  
 factory_bot_rails  
+
+## Text Analysis
+For text analysis we made use of the Microsoft Azure Text Analysis API.
 
 
 ### Contributors
