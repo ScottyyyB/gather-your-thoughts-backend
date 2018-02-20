@@ -24,7 +24,7 @@ devise_token_auth
 acts-as-taggable-on  
 rails  
 active_model_serializers  
-dotenv-rails
+dotenv-rails  
 rack-cors
 
 ### For testing
