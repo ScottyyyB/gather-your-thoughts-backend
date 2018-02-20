@@ -1,6 +1,6 @@
 ## Gather-Your-Thoughts-Backend
 [![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/gather-your-thoughts-backend/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/gather-your-thoughts-backend?branch=development)  
-  
+
 Craft Academy OCT 2017 Cohort Final Project
 
 ### About
@@ -25,6 +25,7 @@ acts-as-taggable-on
 rails  
 active_model_serializers  
 dotenv-rails
+rack-cors
 
 ### For testing
 shoulda-matchers  
