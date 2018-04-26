@@ -18,7 +18,7 @@ RSpec.describe Api::V1::EntriesController, type: :request do
           sentiment_list: "Happy"
         }
       }, headers: headers
-
+      
       expect(response_json['status']).to eq 'success'
       expect(response.status).to eq 200
     end
@@ -91,6 +91,7 @@ RSpec.describe Api::V1::EntriesController, type: :request do
   describe 'GET /v1/entries' do
     it 'returns a the 3 latest entries' do
       get '/api/v1/entries', headers: headers
+      binding.pry
       expect(response.status).to eq 200
       expected_response = eval(file_fixture('entries_index.txt').read)
       expect(response_json).to eq expected_response.as_json

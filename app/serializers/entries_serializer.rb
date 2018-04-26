@@ -1,5 +1,5 @@
 class EntriesSerializer < ActiveModel::Serializer
-  attributes :title, :body, :sentiments, :labels, :date
+  attributes :title, :body, :sentiments, :labels, :created_at
 
   def sentiments
     object.sentiment_list
